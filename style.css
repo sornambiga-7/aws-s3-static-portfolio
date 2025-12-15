@@ -1,0 +1,177 @@
+/* ------------------------------
+General Body
+------------------------------ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #800020; /* Burgundy Red */
+    color: #800020; /* Default dark text */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #800020;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #FFD700; /* Yellow */
+    margin-bottom: 10px;
+    animation: slideDown 1s ease-out;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #FFFFFF;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Sections */
+section {
+    background-color: #FFFFFF; /* White background */
+    color: #800020; /* Burgundy text */
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 1000px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s forwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.8s; }
+section:nth-of-type(5) { animation-delay: 1s; }
+
+/* Headings */
+h2 {
+    color: #D90429; /* Dark Burgundy heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #FFD700;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    animation: expandLine 1s ease forwards;
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #FFD700;
+    color: #800020;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #FFC107;
+    transform: scale(1.05);
+}
+
+/* Cards: Projects / Skills / Certificates / Internships */
+.project, .skill, .certificate, .internship {
+    background-color: #F8F8F8; /* Slight off-white for contrast */
+    color: #800020;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover, .skill:hover, .certificate:hover, .internship:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeUp 1s forwards;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #FFD700;
+    font-size: 1em;
+    resize: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #FFC107;
+    box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+/* Social Icons */
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 1.5s forwards;
+}
+
+.social-icons a {
+    color: #800020;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFD700;
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #800020;
+    color: #d2ba2e;
+    margin-top: 20px;
+    font-size: 0.9em;
+    animation: fadeIn 1s forwards;
+}
+
+/* Animations */
+@keyframes slideDown { 0% { transform: translateY(-50px); opacity:0 } 100% { transform: translateY(0); opacity:1 } }
+@keyframes fadeIn { 0% {opacity:0} 100% {opacity:1} }
+@keyframes fadeUp { 0% {opacity:0; transform:translateY(50px)} 100% {opacity:1; transform:translateY(0)} }
+@keyframes expandLine { 0% {width:0} 100% {width:60px} }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    header h1 { font-size: 2.2em; }
+    section { padding: 30px 15px; }
+}
